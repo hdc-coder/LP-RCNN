@@ -23,9 +23,6 @@ Python 3.11 or 3.12.
 | python-louvain | 0.16 |
 | tqdm | 4.66.5 |
 
-No `torch-geometric`, `torch-scatter` or `scikit-learn` is needed, and there is
-no compiled extension to build.
-
 ```bash
 pip install -r requirements.lock.txt     # exact tested versions
 # or
