@@ -1,0 +1,37 @@
+{
+  "model": "lprcnn",
+  "loss": "listMLE",
+  "lr": 0.005,
+  "batch_size": 32,
+  "epochs": 500,
+  "seed": 10,
+  "train_graph": "./Networks/training/Train_1000_4.txt",
+  "train_label_protocol": "mean SIR over beta/beta_th = 1.0..2.0 (same as every test network)",
+  "train_label_files": [
+    "./SIR results/Train_1000_4/BA_1000_4_0.csv",
+    "./SIR results/Train_1000_4/BA_1000_4_1.csv",
+    "./SIR results/Train_1000_4/BA_1000_4_2.csv",
+    "./SIR results/Train_1000_4/BA_1000_4_3.csv",
+    "./SIR results/Train_1000_4/BA_1000_4_4.csv",
+    "./SIR results/Train_1000_4/BA_1000_4_5.csv",
+    "./SIR results/Train_1000_4/BA_1000_4_6.csv",
+    "./SIR results/Train_1000_4/BA_1000_4_7.csv",
+    "./SIR results/Train_1000_4/BA_1000_4_8.csv",
+    "./SIR results/Train_1000_4/BA_1000_4_9.csv",
+    "./SIR results/Train_1000_4/BA_1000_4_10.csv"
+  ],
+  "train_graph_sha256": "0ab925790b332f2207856945481a077b74385c9f6a4ec8140f5e8ec4776b9490",
+  "train_labels_sha256": [
+    "1ca82bc0caa8891e9aff78447790ab859a7949a7fdc6d425bb1559aa8d5f0c0f",
+    "99fb67f5c91ae2cbfd1c5ffb53a8e86711469e384e146409f44441876a2e140a",
+    "a785299c2ba48e0523dfd9ac8b69474b9a7bada24f6f53fa0cebfcce71660103",
+    "00d97f0731da39e8db4a1f1c79672780bb251dddd05c3d7c58f28478ba3747b9",
+    "c68bbe04b0e1fde75752921d6fe9e807b2fee44a21fd9b7d1a8d9733cf247219",
+    "b888c9ef99e92a984f22464b3e1a8d51b216faf64a1f073008a82ee162312447",
+    "83a2348501bd7e9fc1a30e601b60285d71f9298de2b0b0ebda251b8aa6e364f8",
+    "f573e178fc98cc6de87086a9249cc40fc33ae446806ea95077d1e4410e96cb74",
+    "04d00f8617a5be435f08292ee400dbc3bdcba81fedc5f423140e169217b64da1",
+    "e728015415577321463feea5372171c98ace81a9a07ff6d1d7d4c31d1a1f96d1",
+    "d6a28202f4f35059fa2194ebb5f30fb08cf36f3dd4b0d53e1f55120c0b512836"
+  ]
+}

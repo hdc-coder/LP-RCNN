@@ -1,0 +1,9 @@
+{
+  "model": "agnn",
+  "recipe": "AGNN: BA AE 500ep lr0.01 + rank 3000ep lr0.001 listMLE; eval averages 5 per-network AE seeds",
+  "train_graph": "./Networks/training/Train_1000_4.txt",
+  "train_labels": "./SIR results/Train_1000_4/BA_1000_4.csv",
+  "train_graph_sha256": "0ab925790b332f2207856945481a077b74385c9f6a4ec8140f5e8ec4776b9490",
+  "train_labels_sha256": "3477055443b442f33f8cd77d67bc0da6d39c5522d6dfd30efa23c90cc73d13fb",
+  "seed": 10
+}

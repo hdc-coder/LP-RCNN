@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Regenerable experiment output
+figures/
+logs/
+cache/
+
+# Logs / OS
+*.log
+.DS_Store
+
+# Trained weights (Models/, ablation_models/) and the SIR labels (SIR results/)
+# are committed on purpose, so every table and figure can be rebuilt with a
+# single command. Delete them if you prefer to regenerate everything.

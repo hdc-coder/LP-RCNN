@@ -1,0 +1,12 @@
+# Tested environment (Python 3.11, Windows, CUDA 12.4). Pin these versions
+# for exact reproducibility; install the CUDA build of torch appropriate to
+# your platform (CPU builds are sufficient for the included small models).
+numpy==1.26.4
+pandas==2.2.2
+networkx==3.3
+scipy==1.13.1
+matplotlib==3.9.2
+seaborn==0.13.2
+python-louvain==0.16
+torch==2.6.0
+tqdm==4.66.5
