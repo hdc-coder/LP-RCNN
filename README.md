@@ -29,8 +29,7 @@ pip install -r requirements.lock.txt     # exact tested versions
 pip install -r requirements.txt          # version ranges
 ```
 
-A CUDA GPU shortens training but is not required: the models are small and the
-core pipeline also runs on CPU.
+Training also runs on CPU; a CUDA GPU only shortens it.
 
 ## 2. What each script reproduces
 
@@ -47,8 +46,7 @@ core pipeline also runs on CPU.
 | `generate_sir.py`, `generate_sir_uniform.py` | regeneration of the SIR labels |
 | `Models.py`, `Embeddings.py`, `Utils.py`, `evaluate.py` | shared modules |
 
-Fig. 1 (framework) and Table 5 (parameter counts) follow from the architecture
-and are not produced by a script.
+Fig. 1 (framework) and Table 5 (parameter counts) are not produced by a script.
 
 ## 3. Reproduce
 
@@ -85,9 +83,8 @@ python lr_batch_sweep.py --confirm "0.002/32,0.01/16" --tag _conf2
 python select_setting.py                                              # applies the selection rule
 ```
 
-`select_setting.py` and `merge_sweep_shards.py` read files that the sweep
-writes, so they only run after it; the latter is needed only when a screening
-grid was split across shards.
+`merge_sweep_shards.py` is needed only when a screening grid was split across
+shards.
 
 ## 4. Reproduction requirements
 
@@ -101,8 +98,8 @@ without further configuration:
   SIR labels in `SIR results/`;
 - eleven infection ratios, `beta/beta_th = 1.0 ... 2.0`.
 
-`robustness.py` is the only script that leaves this protocol: it retrains with
-five seeds and on BA(2000,4) / BA(3000,4).
+`robustness.py` additionally retrains with five seeds and on BA(2000,4) and
+BA(3000,4).
 
 ## 5. Data
 
@@ -120,11 +117,10 @@ five seeds and on BA(2000,4) / BA(3000,4).
 
 ## 6. A note on the SIR labels
 
-The label files shipped here are the ones behind the reported results; changing
-the graph files would invalidate them.
+These are the label files behind the reported results. Changing a graph file
+invalidates its labels.
 
-If you regenerate them, note that `Utils.SIR` walks a Python `set` of node-id
-strings, so the simulation depends on `PYTHONHASHSEED`. Pin it:
+If you regenerate them, pin `PYTHONHASHSEED`:
 
 ```bash
 PYTHONHASHSEED=0 python generate_sir.py --network Networks/real/NS.txt \
@@ -136,5 +132,4 @@ PYTHONHASHSEED=0 python generate_sir.py --network Networks/real/NS.txt \
 Released under the terms in [LICENSE](LICENSE).
 
 Parts of the code in this repository were prepared with the assistance of
-DeepSeek. All code was reviewed, tested and validated by the authors, who take
-full responsibility for its content.
+DeepSeek.

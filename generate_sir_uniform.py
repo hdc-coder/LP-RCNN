@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 """Regenerate the SIR labels of the training networks under one uniform recipe.
 
-Each ratio file comes from that graph's own edge list, so every (graph, label)
-pair is consistent by construction.  Recipe, as in ``generate_sir.py``: seed =
+Each ratio file comes from that graph's own edge list.  Recipe, as in ``generate_sir.py``: seed =
 10 + i, beta = a * beta_th with beta_th = <k> / (<k^2> - <k>), miu = 1, N = 1000.
 
 Parallelisation is over (graph, ratio) pairs only and nodes are visited in

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""P1 -- sensitivity of the results to the seed and the training network.
+"""Sensitivity of the results to the seed and the training network.
 
 Part A retrains on BA(1000,4) with five seeds; Part B retrains on BA(1000,4),
 BA(2000,4) and BA(3000,4) with one.  Both label every training network the same

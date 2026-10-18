@@ -28,7 +28,7 @@ def _select_neighborhood(G, node, L):
                 subset.append(nei)
         return subset
 
-    # first-order neighbours are not enough -> fill with higher-order ones
+    # top up with higher-order neighbours until L
     gap = (L - 1) - len(selected_nei)
     high_nei = set(selected_nei)
     neis = selected_nei

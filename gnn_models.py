@@ -223,9 +223,8 @@ def train_agnn_ae(ae, A_sp, D, epochs=500, verbose=False):
 
 
 def train_agnn_rank(rank, A_sp, Z, y, epochs=3000, verbose=False):
-    """Official CGNN recipe: Adam lr 0.001, wd 5e-4, listMLE only.  The
-    notebook's ``bad_counter`` block never breaks and never restores, so all
-    epochs run."""
+    """Official CGNN recipe: Adam lr 0.001, wd 5e-4, listMLE only, all epochs
+    run."""
     import torch.optim as optim
     import Utils
     opt = optim.Adam(rank.parameters(), lr=0.001, weight_decay=5e-4)
@@ -279,17 +278,15 @@ class SparseTransformerLayer(nn.Module):
 class STGCN(nn.Module):
     """STGCN reproduction (Huang et al. 2026): ST layer + two GCN layers as the
     autoencoder, GNN1/GNN2 + ST layer + linear head as the rank module, listMLE
-    only, 15 runs averaged.
-
-    Two deviations keep it out of the paper: a learnable degree-map input instead of
-    Eq. (14)'s identity, and no external skip of Eq. (22).
+    only, 15 runs averaged.  The degree map is learnable and the external skip of
+    Eq. (22) is omitted; this baseline is not reported in the paper.
     """
     __constants__ = ['d']
 
     def __init__(self, d=64, n_anchors=15, dropout=0.1):
         super().__init__()
         self.d = d
-        self.embed = nn.Linear(1, d)          # disclosed input adaptation
+        self.embed = nn.Linear(1, d)          # learnable degree map
         self.st_ae = SparseTransformerLayer(d, n_anchors, dropout)
         self.gcn_ae1 = GCNLayer(d, d)
         self.gcn_ae2 = GCNLayer(d, d)

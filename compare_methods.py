@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
-"""Experiment 1 -- LP-RCNN against the state of the art.
+"""Experiment 1 -- LP-RCNN against the baselines.
 
 Kendall tau-b against SIR, nine networks, eleven ratios, for LP-RCNN, RCNN
 (Yu 2020), M-RCNN (Ou 2022), N-RCNN, AGNN (2024) and the classical indices
-BC / DC / Vc / K-core / ND.  STGCN is absent: our reproduction scores ~0.42,
-below DC and k-core.
+BC / DC / Vc / K-core / ND.
 
 Writes ``figures/compare/``: two figures and four CSVs.
 """

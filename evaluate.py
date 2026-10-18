@@ -119,8 +119,8 @@ def _graph_sha256(G):
 def cached_centrality(name, G, key, fn):
     """Per-node score dict from ``cache/``, or computed and stored.
 
-    The sidecar holds the graph SHA-256, so an edited network file invalidates the
-    entry instead of reusing stale values.
+    The sidecar holds the graph SHA-256, so an edited network file yields a new
+    entry.
     """
     path = os.path.join(CACHE_DIR, f'{name}_{key}.json')
     meta_path = path + '.meta.json'

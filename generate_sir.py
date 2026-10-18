@@ -5,8 +5,8 @@ Per node the process runs ``--runs`` times at each ratio and the mean final
 outbreak size goes to ``{out_prefix}{i}.csv``; ``--combined`` adds the mean over
 all ratios.  The seed resets for every ratio.
 
-``Utils.SIR`` walks a set of node-id strings, so the values also depend on
-``PYTHONHASHSEED``.  Pin it to reproduce the shipped files:
+The values also depend on ``PYTHONHASHSEED``; pin it to reproduce the
+shipped files:
 
     PYTHONHASHSEED=0 python generate_sir.py --network ... --out ... --seed 10
 """

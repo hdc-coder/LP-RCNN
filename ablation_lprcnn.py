@@ -74,7 +74,7 @@ def build_variant_specs():
     }
 
 
-# one ordered style list, so a variant can never drop out of a figure
+# ordered style list: one colour per variant
 VARIANT_STYLE = [
     ('LP-RCNN',                'crimson',    's', 3.0),
     ('LP-RCNN (no multi)',     'royalblue',  '^', 2.4),
